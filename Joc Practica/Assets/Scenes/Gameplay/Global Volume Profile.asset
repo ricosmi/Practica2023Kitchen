@@ -21,10 +21,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 0.285
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.456
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
+          time: 0.108920805
           value: 0
           inSlope: 0
           outSlope: 1
@@ -92,8 +92,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 1
-          value: 1
+          time: 0.95756763
+          value: 0.9480969
           inSlope: 1
           outSlope: 0
           tangentMode: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
   blue:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 2
       m_Loop: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 1
+          inSlope: 0
           outSlope: 1
           tangentMode: 0
           weightedMode: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -248,10 +248,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.90520364, z: 0.83383805, w: -0.023041476}
+    m_Value: {x: 0.89680344, y: 0.9086195, z: 1, w: -0.03456221}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.96558106, z: 0.97303575, w: 0}
+    m_Value: {x: 1, y: 0.97993356, z: 0.91972846, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 0.84569776, y: 0.9471361, z: 1, w: 0}
@@ -298,13 +298,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.85810125, y: 0.87434787, z: 1, w: -0.046082947}
+    m_Value: {x: 0.85810125, y: 0.87434787, z: 1, w: 0.06912442}
   midtones:
     m_OverrideState: 0
     m_Value: {x: 1, y: 0.9943476, z: 0.9918407, w: 0}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 0.99422693, z: 0.9967835, w: 0}
+    m_Value: {x: 0.99270517, y: 1, z: 0.99452865, w: 0}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0.05
@@ -350,10 +350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 10.2
   tint:
     m_OverrideState: 1
     m_Value: 5
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.95
   intensity:
     m_OverrideState: 1
     m_Value: 1
