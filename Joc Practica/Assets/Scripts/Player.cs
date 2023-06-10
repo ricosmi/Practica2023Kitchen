@@ -5,28 +5,74 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private GameInput gameInput;
+    [SerializeField] private float playerWidth=.7f;
+    [SerializeField] private float playerHeight = 2f;
+    private bool isWalking;
     private void Update()
     {
-        Vector2 inputVector=new Vector2(0,0);
-        if (Input.GetKey(KeyCode.W))
+
+        Vector2 inputVector = gameInput.GetInputVector2Normalized();
+
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
+        float moveDistance = moveSpeed * Time.deltaTime;
+
+
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerWidth, moveDir, moveDistance);
+        if (!canMove)
         {
-            inputVector.y = +1;
+            //cant move forward
+
+            //try move on x
+            Vector3 xDirection = new Vector3(moveDir.x, 0, 0).normalized;
+            bool canMoveX = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerWidth, xDirection, moveDistance);
+
+            if (canMoveX)
+            {
+                //can move only on x
+                canMove = true;
+                moveDir = xDirection;
+            }
+            //i cant move on x try on z
+            else
+            {
+                Vector3 zDirection = new Vector3(0, 0, moveDir.z).normalized;
+                bool canMoveZ = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerWidth, zDirection, moveDistance);
+                if (canMoveZ)
+                {
+                    //can move only on z
+                    canMove = true;
+                    moveDir = zDirection;
+                }
+                else
+                {
+                    //cant move in any direction
+                }
+
+            }
+
         }
-        if (Input.GetKey(KeyCode.S))
+        var step = moveDir * moveDistance;
+        if (canMove)
         {
-            inputVector.y= -1;
+            transform.position += step;
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputVector.x = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputVector.x= +1;
-        }
-        Vector3 moveDir=new Vector3(inputVector.x,0f,inputVector.y);
-        transform.position += moveDir* moveSpeed*Time.deltaTime;
+        
+
+        isWalking=moveDir != Vector3.zero;
+        //rotateSpeed = 10f;
+
+
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
         Debug.Log(Time.deltaTime);
 
+
+
+    }
+    public bool IsWalking()
+    {
+        return isWalking;
     }
 }
