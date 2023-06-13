@@ -442,6 +442,7 @@ MonoBehaviour:
   counterLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  kitchenObjectHoldPoint: {fileID: 1822456111}
 --- !u!4 &502836319
 Transform:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 845920951}
+  - {fileID: 1822456111}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -695,6 +697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
         type: 3}
+      propertyPath: testing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
+        type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 2245516614822382493, guid: 0630e25d5ce43cd4fb3a89a9ecb82f49,
@@ -705,6 +712,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9371876150732b847a0b5435e8a11ba1,
         type: 2}
+    - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5139661752502424450, guid: 57a9c87679956d84fb614051f05ded15,
         type: 3}
       propertyPath: m_Size.z
@@ -1061,6 +1073,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522497816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137977559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f35d9bdca3bcdf4ab7c361601a8aac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1822456110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822456111}
+  m_Layer: 0
+  m_Name: KitchenObjectHoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822456111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822456110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6, y: 1.3, z: 1.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502836319}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992833754
 GameObject:
   m_ObjectHideFlags: 3
@@ -1379,10 +1434,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
         type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
+        type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 2245516614822382493, guid: 63695fd978d2e0f489b1f5dce521c0fc,
         type: 3}
+    - target: {fileID: 809329543987610104, guid: 57a9c87679956d84fb614051f05ded15,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 1522497816}
     - target: {fileID: 1454050568443847043, guid: 57a9c87679956d84fb614051f05ded15,
         type: 3}
       propertyPath: m_IsActive
