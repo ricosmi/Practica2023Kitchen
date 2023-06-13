@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     }
     private void GameInput_OnInteractAction(object sender,System.EventArgs e)
     {
+
         if(selectedCounter!=null)
         {
             selectedCounter.Interact();
@@ -71,28 +72,32 @@ public class Player : MonoBehaviour
             lastInteractDir = moveDir;
         }
         float interactDistance = 2f;
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance,counterLayerMask))
+        bool counterFound = Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, counterLayerMask);
+        
+        if (counterFound)
         {
-            if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            bool hasComponent = raycastHit.transform.TryGetComponent(out ClearCounter clearCounter);
+            if (hasComponent)
             {
                 //HAS CLEARCOUNTER
                 if(clearCounter!=selectedCounter)
                 {
                     SetSelectedCounter(clearCounter);
                 }
-                else
-                {
-                    SetSelectedCounter(null);
-                }
+               
                 
                 
-            }else
-            { 
+            }
+            if(hasComponent==false)
+            {
                 SetSelectedCounter(null);
             }
         }
-       
+        if (counterFound==false)
+        {
+            SetSelectedCounter(null);
         
+        }     
     }
     private void HandleMovement()
     {
