@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlateKitchenObject : KitchenObject
 {
@@ -11,7 +12,7 @@ public class PlateKitchenObject : KitchenObject
     {
         public KitchenObjectSO KitchenObjectSO;
     }
-    private List<KitchenObjectSO> kitchenObjectSOList;
+    public List<KitchenObjectSO> kitchenObjectSOList;
     [SerializeField] private List<KitchenObjectSO> validkitchenObjectSOList;
     
     
